@@ -1,0 +1,11 @@
+base_url = "https://papers.avt.im"
+compile_sass = true
+build_search_index = false
+generate_feed = false
+minify_html = true
+theme = "academic-paper"
+
+[markdown]
+highlight_code = true
+highlight_theme = "css"
+smart_punctuation = true
