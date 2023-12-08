@@ -9,3 +9,6 @@ theme = "academic-paper"
 highlight_code = true
 highlight_theme = "css"
 smart_punctuation = true
+
+[extra]
+google_analytics = "G-GB3BZDSEMD"
