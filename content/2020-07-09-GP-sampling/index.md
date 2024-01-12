@@ -17,6 +17,7 @@ buttons = [
     {name = "Video", url = "https://icml.cc/virtual/2020/poster/6461"},
 ]
 katex = true
+large_card = true
 +++
 
 Gaussian processes (GPs) play a pivotal role in many complex machine learning algorithms. For example, sequential decision-making strategies such as Bayesian optimization frequently use GPs to represent different actions' possible outcomes. 

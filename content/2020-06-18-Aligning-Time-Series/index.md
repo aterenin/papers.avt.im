@@ -17,6 +17,7 @@ buttons = [
     {name = "Video", url = "https://virtual.aistats.org/virtual/2021/poster/1628"},
 ]
 katex = true
+large_card = true
 +++
 
 Data is often gathered sequentially in the form of a time series, which consists of sequences of data points observed at successive time points. 

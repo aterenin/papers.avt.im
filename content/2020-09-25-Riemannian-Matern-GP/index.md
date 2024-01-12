@@ -16,6 +16,7 @@ buttons = [
     {name = "Poster", url = "presentations/2020-12-07-Riemannian-Matern-GP-Poster/2020-12-07-Riemannian-Matern-GP-Poster.pdf"},
 ]
 katex = true
+large_card = true
 +++
 
 Gaussian processes are a useful technique for modeling unknown functions `$f:\mathbb{R}^d\to\mathbb{R}$`. 

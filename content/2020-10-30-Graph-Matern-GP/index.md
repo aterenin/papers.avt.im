@@ -18,6 +18,7 @@ buttons = [
     {name = "Video", url = "https://virtual.aistats.org/virtual/2021/oral/1817"},
 ]
 katex = true
+large_card = true
 +++
 
 Gaussian processes are a model class for learning unknown functions from data.

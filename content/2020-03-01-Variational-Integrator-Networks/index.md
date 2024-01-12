@@ -15,6 +15,7 @@ buttons = [
     {name="Video", url = "https://aistats2020.net/poster_1009.html"},
 ]
 katex = true
+large_card = true
 +++
 
 Learning models of physical systems can be tricky, but exploiting inductive biases about the nature of the system can speed up learning significantly. 

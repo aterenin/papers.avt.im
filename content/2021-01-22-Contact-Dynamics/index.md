@@ -16,6 +16,7 @@ buttons = [
 ]
 video = "https://virtual.aistats.org/virtual/2021/poster/1764"
 katex = true
+large_card = true
 +++
 
 Learning models of physical systems can sometimes be difficult. 
