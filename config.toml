@@ -1,7 +1,7 @@
 base_url = "https://papers.avt.im"
 compile_sass = true
 build_search_index = false
-generate_feed = false
+generate_feeds = false
 minify_html = true
 theme = "academic-paper"
 
