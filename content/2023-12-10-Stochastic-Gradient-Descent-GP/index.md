@@ -11,7 +11,7 @@ authors = [
 ]
 venue = {name = "NeurIPS", date = 2023-12-10, url = "https://neurips.cc/Conferences/2023"}
 buttons = [
-    {name = "Paper", url = "https://arxiv.org/abs/2306.11589"},
+    {name = "Paper", url = "https://proceedings.neurips.cc/paper_files/paper/2023/hash/7482e8ce4139df1a2d8195a0746fa713-Abstract-Conference.html"},
     {name = "PDF", url = "https://arxiv.org/pdf/2306.11589"},
     {name = "Code", url = "https://github.com/cambridge-mlg/sgd-gp"},
 ]
