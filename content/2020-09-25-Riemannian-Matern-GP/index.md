@@ -39,7 +39,7 @@ where `$K_\nu$` is the modified Bessel function of the second kind, and `$\sigma
 As `$\nu\to\infty$`, the Matérn kernel converges to the widely-used squared exponential kernel.
 
 To generalize this class of Gaussian processes to the Riemannian setting, one might consider replacing Euclidean distances `$\Vert x-x' \Vert$` with the geodesic distance `$d_g(x, x')$`. 
-Unfortunately, this doesn't necessarily define a valid kernel: in particular, the geodesic squared exponential kernel already fails to be positive semi-definite for most manifolds, due to a recent no-go result.[^nogo][^nogo2]
+Unfortunately, this doesn't necessarily define a valid kernel: in particular, the geodesic squared exponential kernel already fails to be positive semi-definite for most manifolds, due to a recent no-go result.[^nogo] [^nogo2]
 We therefore adopt a different approach, which is not based on geodesics.
 
 # Stochastic partial differential equations
@@ -75,7 +75,7 @@ $$
 ```
 
 where `$C$` is a constant chosen so that the variance is `$\sigma^2$` on average.[^sqexp]
-By truncating this sum, we obtain a workable approximation for the kernel,[^sm] allowing us to train the process on data using standard methods, such as sparse inducing point techniques.[^vfe][^gpbd]
+By truncating this sum, we obtain a workable approximation for the kernel,[^sm] allowing us to train the process on data using standard methods, such as sparse inducing point techniques.[^vfe] [^gpbd]
 The resulting posterior Gaussian processes are visualized below.
 
 
@@ -88,7 +88,7 @@ This equation is very well-studied, and a number of scalable techniques for solv
 # Concluding remarks
 
 We present techniques for computing the kernels, spectral measures, and Fourier feature approximations of Riemannian Matérn and squared exponential Gaussian processes, using spectral techniques via the Laplace--Beltrami operator.
-This allows us to train these processes via standard techniques, such as variational inference via sparse inducing point methods,[^vfe][^gpbd] or Fourier feature methods.[^rff]
+This allows us to train these processes via standard techniques, such as variational inference via sparse inducing point methods,[^vfe] [^gpbd] or Fourier feature methods.[^rff]
 In turn, this allows Riemannian Matérn Gaussian processes to easily be deployed in mini-batch, online, and non-conjugate settings.
 We hope this work enables practitioners to easily deploy techniques such as Bayesian optimization in this setting.
 

@@ -44,7 +44,7 @@ Using VINs allows us to easily learn models with physical forecasting behaviour 
 
 # From Residual Networks to Variational Integrator Networks
 
-The idea is simple: if we view neural networks as dynamical systems[^haber][^E][^chen]---and discretize them in a manner that preserves qualitative physical properties[^marsden]---we can define network architectures that obey the laws of physics. 
+The idea is simple: if we view neural networks as dynamical systems[^haber] [^E] [^chen]---and discretize them in a manner that preserves qualitative physical properties[^marsden]---we can define network architectures that obey the laws of physics. 
 A particularly salient example of the kind of inductive bias we are interested in is the presence of conservation laws, for instance conservation of energy or conservation of momentum.
 
 A canonical description of classical physical dynamical systems is Lagrangian mechanics, where a system is completely characterized by its Lagrangian `$L(q, \dot{q}, t)$`, a scalar function that encodes underlying physical properties. 
@@ -57,7 +57,7 @@ $$
 $$
 ```
 
-discretized using an Euler scheme,[^haber][^E][^chen] giving
+discretized using an Euler scheme,[^haber] [^E] [^chen] giving
 
 ```
 $$

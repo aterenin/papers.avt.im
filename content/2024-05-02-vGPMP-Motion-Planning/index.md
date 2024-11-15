@@ -31,13 +31,13 @@ Our results show the proposal achieves a reasonable balance between the motion p
 # Applying Variational Gaussian Processes to Motion Planning
 
 We begin with a motion planning framework, which we call *variational Gaussian process motion planning (vGPMP)*.
-This framework is based on variational Gaussian processes, which were originally introduced for scalability:[^vfe][^gpbd] here, we instead apply them to create a straightforward way to parameterize motion plans.
+This framework is based on variational Gaussian processes, which were originally introduced for scalability:[^vfe] [^gpbd] here, we instead apply them to create a straightforward way to parameterize motion plans.
 Let `$\mathcal{T}$` represent time: our motion plan is a map `$f: \mathcal{T} \to \mathbb{R}^d$`, where the output space represents each of the robot's joints.
 We parameterize `$f$` as a posterior Gaussian process, conditioned on `$f(\boldsymbol{z}) = \boldsymbol{u}$`, where `$\boldsymbol{z}$` is a set of inducing locations `$\boldsymbol{z} \in \mathcal{T}^m$`, and `$\boldsymbol{u}$` are robot joint states at times `$\boldsymbol{z}$`. 
 We interpret `$(z_j,u_j)$`-pairs as *waypoints* through which the robot should move.
 Our precise formulation in the paper also includes a bijective map which accounts for joint constraints: we suppress this here for simplicity.
 
-To draw motion plans, we apply *pathwise conditioning*,[^efficient-sampling][^pathwise-conditioning] and represent posterior samples as
+To draw motion plans, we apply *pathwise conditioning*,[^efficient-sampling] [^pathwise-conditioning] and represent posterior samples as
 
 ```
 $$
@@ -56,7 +56,7 @@ We illustrate this below.
 Computing the motion plan therefore entails optimizing these parameters with respect to an appropriate variational objective.
 Once optimized, in practice we can sample from the posterior using efficient sampling, that is, by first approximately sampling the prior `$f(\cdot)$` using Fourier features, then transforming the sampled prior motion plans into posterior motion plans. 
 This procedure allows us to draw random curves representing the posterior in a way that *resolves the stochasticity once in advance* per sample, after which we can evaluate and differentiate the motion plan at arbitrary time points without any additional sampling.
-Compared to prior work such as GPMP2 and its variants,[^gpmp][^gpmp2][^igpmp2] we support general kernels and avoid relying on specialized techniques for stochastic differential equations, thereby enabling explicit control of motion plan smoothness properties.
+Compared to prior work such as GPMP2 and its variants,[^gpmp] [^gpmp2] [^igpmp2] we support general kernels and avoid relying on specialized techniques for stochastic differential equations, thereby enabling explicit control of motion plan smoothness properties.
 Additionally, in contrast with prior work,[^gvi] our formulation bypasses the need to use interpolation to evaluate the posterior in-between a set of pre-specified time points.
 
 Following the framework of variational inference, the resulting variational posterior can be trained by solving the optimization problem 
@@ -86,7 +86,7 @@ This is done by composing the forward kinematics map `$\operatorname{k}_{\operat
 Then, we compute the hinge loss `$\operatorname{h}_\varepsilon(x) = \max(-x + \varepsilon, 0)$`, where `$\varepsilon$` is the *safety distance* parameter, and calculate its squared norm with respect to a diagonal scaling matrix `$\mathbf\Sigma_{\operatorname{obs}}$` which determines the overall importance of avoiding collisions in the objective.
 
 The soft constraint term, which can be used to encode desired behavior such as a grasping pose, is handled analogously.
-Compared to prior work,[^gpmp][^gpmp2][^igpmp2][^gvi] one of the key differences is the introduction of `$\sigma$`, which guarantees that joint limits are respected without the need for clamping or other post-processing-based heuristics.
+Compared to prior work,[^gpmp] [^gpmp2] [^igpmp2] [^gvi] one of the key differences is the introduction of `$\sigma$`, which guarantees that joint limits are respected without the need for clamping or other post-processing-based heuristics.
 
 # Experiments
 

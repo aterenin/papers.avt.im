@@ -38,7 +38,7 @@ Let's see a simple comparison between standard large-scale Gaussian process appr
 {% end %}
 
 From this comparison, one can see that different large-scale Gaussian process approximations work well in different regimes.
-Conjugate-gradient-based Gaussian processes[^cg] work well under large-domain asymptotics, whereas sparse Gaussian processes trained via variational inference[^ip-s][^ip-v] work well under infill asymptotics.
+Conjugate-gradient-based Gaussian processes[^cg] work well under large-domain asymptotics, whereas sparse Gaussian processes trained via variational inference[^ip-s] [^ip-v] work well under infill asymptotics.
 One can show theory which suggests this this distinction holds beyond one-dimensional problems.[^ip-theory]
 In contrast, the stochastic gradient descent variant we present looks very reasonable in both cases: it empirically converges in most regions of state space under infill asymptotics, and converges everywhere under large-domain asymptotics.
 Let's look at this algorithm in more details.
@@ -48,7 +48,7 @@ Let's look at this algorithm in more details.
 
 To formulate stochastic gradient descent for posterior sampling, let's begin by writing down a random quadratic optimization problem for computing posterior samples.
 Let `$f \sim\mathrm{GP}(0,k)$` be the prior, and let `$\boldsymbol{y}\mid f\sim\mathrm{N}(f(\boldsymbol{x}), \mathbf\Sigma)$` be the likelihood.
-Let's begin with the *pathwise conditioning*[^efficient-sampling][^pathwise-conditioning] formula for posterior random functions, namely
+Let's begin with the *pathwise conditioning*[^efficient-sampling] [^pathwise-conditioning] formula for posterior random functions, namely
 
 ```
 $$
@@ -70,7 +70,7 @@ $$
 
 We can stochastically estimate the large sum using minibatches.
 Similarly, we can apply a Fourier-feature-based stochastic estimator for the squared norm term.
-We use *efficient sampling* to approximately sample the prior `$f(x_i)$` using Fourier features.[^efficient-sampling][^pathwise-conditioning]
+We use *efficient sampling* to approximately sample the prior `$f(x_i)$` using Fourier features.[^efficient-sampling] [^pathwise-conditioning]
 This gives us a subquadratic stochastic estimator for this optimization objective which is almost unbiased, in the sense that the only bias present is from efficiently sampling the prior.
 To reduce this objective's variance, we apply a number of tricks, including carefully shifting the `$\boldsymbol\varepsilon$` noise term into the regularizer, which are described in the paper.
 The result is a practical stochastic optimization objective for Gaussian process posterior samples.
@@ -83,7 +83,7 @@ In the paper, use stochastic gradient descent with Nesterov momentum, gradient c
 Let's see how this algorithm performs, in particular how it is affected by observation noise in the likelihood.
 
 {% figure(alt=["Convergence of stochastic gradient descent for the Gaussian process mean"] src=["exact_metrics.svg"] dark_invert=[true]) %}
-**Figure 2.** Convergence of stochastic gradient descent for the Gaussian process posterior mean, in terms of training and test error, along with Euclidean error for the representer weights
+**Figure 2.** Convergence of stochastic gradient descent for the Gaussian process posterior mean, in terms of training and test error, along with Euclidean error for the representer weights.
 {% end %}
 
 From this plot, it is clear that stochastic gradient descent does not converge approximately to the correct representer weights.
@@ -151,7 +151,7 @@ This suggests the benign non-convergence, which we previously saw in one dimensi
 
 # Conclusion
 
-In this, we explored using stochastic gradient descent to approximately compute Gaussian process posteriors, by way of means and function samples.
+In this work, we explored using stochastic gradient descent to approximately compute Gaussian process posteriors, by way of means and function samples.
 We examined how to derive appropriate stochastic optimization objectives for doing so, and showed that SGD can produce accurate predictions even in cases where it does not converge to the respective optimum under the given compute budget.
 We developed a spectral characterization of the effect of non-convergence in terms of the spectral basis functions.
 We showed that, on a Thompson sampling benchmark where well-calibrated uncertainty is critical, SGD matches or exceeds the performance of more computationally expensive baselines.
