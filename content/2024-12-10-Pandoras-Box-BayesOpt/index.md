@@ -10,7 +10,7 @@ authors = [
 ]
 venue = {name = "NeurIPS", date = 2024-12-10, url = "https://neurips.cc/Conferences/2024"}
 buttons = [
-    {name = "Paper", url = "https://openreview.net/forum?id=Ouc1F0Sfb7"},
+    {name = "Paper", url = "https://papers.nips.cc/paper_files/paper/2024/hash/d14c355d5e88cff437a6303d2d716252-Abstract-Conference.html"},
     {name = "PDF", url = "https://arxiv.org/pdf/2406.20062"},
     {name = "Code", url = "https://github.com/QianJaneXie/PandoraBayesOpt"},
 ]
