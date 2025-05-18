@@ -11,5 +11,4 @@ highlight_theme = "css"
 smart_punctuation = true
 
 [extra]
-google_analytics = "G-GB3BZDSEMD"
 server_side_katex = true
