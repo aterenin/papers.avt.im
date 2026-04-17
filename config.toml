@@ -6,8 +6,9 @@ minify_html = true
 theme = "academic-paper"
 
 [markdown]
-highlight_code = true
-highlight_theme = "css"
+bottom_footnotes = true
+highlighting.light_theme = "github-light"
+highlighting.dark_theme = "github-dark"
 smart_punctuation = true
 
 [extra]
