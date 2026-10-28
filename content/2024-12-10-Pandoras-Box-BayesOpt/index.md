@@ -69,9 +69,9 @@ where `$T+1$` is the time at which the agent decided to take a reward from an op
 Figure 1 illustrates the setup.
 
 
-{% figure(alt=["Pandora's Box"] src=["pandoras_box.svg"] dark_invert=[true]) %}
+{% <figure alt={["Pandora's Box"]} src={["pandoras_box.svg"]} dark_invert={[true]}> %}
 **Figure 1.** A visual illustration of the Pandora's Box problem, with two closed boxes and one open box.
-{% end %}
+{% </figure> %}
 
 This already looks a lot like expected budget-constrained optimization, but with two changes:
 
@@ -106,9 +106,9 @@ Why does the solution to Pandora's Box take the form of maximizing an acquisitio
 What is the meaning of the root-finding problem which defines `$\alpha^\star$`?
 One way to approach these questions is to first consider a simpler problem, involving just two boxes: one closed box with reward `$f$` and cost `$c$`, and one open box with reward `$g$`. Figure 2 illustrates this.
 
-{% figure(alt=["Pandora's Box"] src=["pandoras_box_comparison.svg"] dark_invert=[true]) %}
+{% <figure alt={["Pandora's Box"]} src={["pandoras_box_comparison.svg"]} dark_invert={[true]}> %}
 **Figure 2.** A simplified Pandora's Box problem, with one closed and one open box.
-{% end %}
+{% </figure> %}
 
 Now, there's only one decision: we can either open the box, or leave it closed.
 Let's see what the value is in both cases:
@@ -157,9 +157,9 @@ Figure 3 shows this: we see that, roughly, `$\lambda$` controls risk-seeking vs.
 We also see in the `$\lambda\to0$` limit that the contour plot becomes linear, indicating that `$\alpha^{\operatorname{PBGI}}$` begins to behave like the UCB acquisition function in this limit.
 Our paper contains more discussion on this connection, as well as an additional dynamic-`$\lambda$` variant.
 
-{% figure(alt=["Contour and Cost"] src=["contour_and_cost.svg"] dark_invert=[true]) %}
+{% <figure alt={["Contour and Cost"]} src={["contour_and_cost.svg"]} dark_invert={[true]}> %}
 **Figure 3.** Illustration of how `$\alpha^{\operatorname{PBGI}}$` behaves when one varies the posterior mean and standard deviation, as well as costs.
-{% end %}
+{% </figure> %}
 
 Next, we benchmark the Pandora's Box Gittins Index acquisition function on a comprehensive set of experiments to evaluate its performance relative to baselines, under both varying costs, and a more-classical setting where the cost function is a constant and is treated as a hyperparameter.
 Full experimental details are in the paper, along with descriptions of baselines and results on sensitivity to various problem and setup hyperparameters.
@@ -172,9 +172,9 @@ As one increases dimension, a regime where `$\alpha^{\operatorname{PBGI}}$` deci
 In our paper, we see similar behavior on other problem classes—except that the second-best-performing baselines does not always perform comparably, and is different in different experiments.
 Eventually, however, the dimension becomes large enough that no method performs better than random search.
 
-{% figure(alt=["Bayesian Regret"] src=["bayesian_regret.svg"] dark_invert=[true]) %}
+{% <figure alt={["Bayesian Regret"]} src={["bayesian_regret.svg"]} dark_invert={[true]}> %}
 **Figure 4.** Performance in terms of Bayesian regret: that is, with respect to optimizing objective functions randomly sampled from the prior.
-{% end %}
+{% </figure> %}
 
 
 # Future Work

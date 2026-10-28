@@ -68,7 +68,7 @@ Accordingly, we may sample `$\boldsymbol{a} \mid \boldsymbol{b} = \boldsymbol{\b
 This procedure is illustrated below for the simple case of bivariate normal random variables.
 
 
-{{ figure(alt = ["Sample from the joint distribution","Transform the samples into the conditional distribution"], src = ["joint.svg","cond.svg"], subcaption = ["(1) Jointly sample `$\boldsymbol{a},\boldsymbol{b}$`","(2) Transform `$\boldsymbol{a},\boldsymbol{b}$` into `$\boldsymbol{a}\mid\boldsymbol{b}$`"], dark_invert = [true,true]) }}
+{{ <figure alt={["Sample from the joint distribution","Transform the samples into the conditional distribution"]} src={["joint.svg","cond.svg"]} subcaption={["(1) Jointly sample `$\\boldsymbol{a},\\boldsymbol{b}$`","(2) Transform `$\\boldsymbol{a},\\boldsymbol{b}$` into `$\\boldsymbol{a}\\mid\\boldsymbol{b}$`"]} dark_invert={[true,true]} /> }}
 
 
 Extending this concept to Gaussian process priors `$f \sim \mathcal{GP}(0, k)$` leads to a pathwise characterization of their posteriors, namely
@@ -124,7 +124,7 @@ Here, we have chosen to explicitly represent the update as a sum over canonical 
 This is visualized below.
 
 
-{{ figure(alt = ["The prior term and its Fourier basis functions","The update term and its canonical basis functions"], src = ["prior.svg","data.svg"], subcaption = ["The prior term and its Fourier basis functions","The update term and its canonical basis functions"], dark_invert = [true,true]) }}
+{{ <figure alt={["The prior term and its Fourier basis functions","The update term and its canonical basis functions"]} src={["prior.svg","data.svg"]} subcaption={["The prior term and its Fourier basis functions","The update term and its canonical basis functions"]} dark_invert={[true,true]} /> }}
 
 
 Unlike previous approximate GPs, this approach is specifically tailored for sampling. Just as the Fourier basis excells at representing the prior, the canonical basis excells at representing the data.[^svgpr]

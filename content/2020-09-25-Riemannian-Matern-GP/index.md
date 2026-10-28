@@ -56,7 +56,7 @@ where `$\Delta$` is the Laplacian, and `$\mathcal{W}$` is Gaussian white noise.[
 This gives another way to generalize Matérn Gaussian processes from the Euclidean to the Riemannian setting: replace the Laplacian and white noise process with their Riemannian analogues.
 The kernels of these processes, calculated via our technique on three example manifolds, namely, the circle, sphere, and dragon, are shown below, where color represents the value of the kernel between any given point and the red dot. 
 
-{{ figure(alt = ["Kernel: circle","Kernel: sphere","Kernel: dragon manifold"], src = ["kernel-circle.svg","kernel-sphere.png","kernel-dragon.png"]) }}
+{{ <figure alt={["Kernel: circle","Kernel: sphere","Kernel: dragon manifold"]} src={["kernel-circle.svg","kernel-sphere.png","kernel-dragon.png"]} /> }}
 
 Unfortunately, this process is somewhat non-constructive: to train such Gaussian processes on data, one resorts to solving these SPDEs,[^gmrf] which without further modifications needs to be done repeatedly for every posterior sample, which can become rather involved, particularly if the chosen smoothness `$\nu$` yields SPDEs of fractional order.
 In this work, we compute workable expressions for the kernels of these processes, so they can be used by practitioners without detailed knowledge of SPDEs.
@@ -79,7 +79,7 @@ By truncating this sum, we obtain a workable approximation for the kernel,[^sm] 
 The resulting posterior Gaussian processes are visualized below.
 
 
-{{ figure(alt = ["Ground truth","Posterior mean","Standard deviation"], src = ["gt.png","mean.png","stddev.png"], subcaption = ["(a) Ground truth","(b) Posterior mean","(c) Standard deviation"]) }}
+{{ <figure alt={["Ground truth","Posterior mean","Standard deviation"]} src={["gt.png","mean.png","stddev.png"]} subcaption={["(a) Ground truth","(b) Posterior mean","(c) Standard deviation"]} /> }}
 
 
 The Laplace--Beltrami eigenvalues `$\lambda_n$` and eigenfunctions `$f_n$` are analytic in many cases of interest, such as the sphere, but it's also possible to compute them numerically by solving a Helmholtz equation.

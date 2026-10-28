@@ -49,9 +49,9 @@ where the inducing points `$\boldsymbol{z}$` and the variational distribution `$
 We illustrate this below.
 
 
-{% figure(alt=["Sparse Gaussian process","Gaussian-process-based motion plan"] src=["pathwise.svg","pathwise_robot_orange_wide.png"] dark_invert=[true,false]) %}
+{% <figure alt={["Sparse Gaussian process","Gaussian-process-based motion plan"]} src={["pathwise.svg","pathwise_robot_orange_wide.png"]} dark_invert={[true,false]}> %}
 **Figure.** Motion planning using sparse Gaussian processes and pathwise conditioning. Left: illustration of a sparse Gaussian process. Right: a sparse-Gaussian-process-produced motion plan, with uncertainty.
-{% end %}
+{% </figure> %}
 
 Computing the motion plan therefore entails optimizing these parameters with respect to an appropriate variational objective.
 Once optimized, in practice we can sample from the posterior using efficient sampling, that is, by first approximately sampling the prior `$f(\cdot)$` using Fourier features, then transforming the sampled prior motion plans into posterior motion plans. 
@@ -93,25 +93,25 @@ Compared to prior work,[^gpmp] [^gpmp2] [^igpmp2] [^gvi] one of the key di
 Below, we provide a side-by-side comparison with our framework (vGPMP) and various baselines, on the UR10 and Franka robots.
 This comparison shows that, on these examples, vGPMP tends to result in higher mean clearance: the incorporation of uncertainty produce paths which are more conservative with respect to collision avoidance.
 
-{% figure(alt=["vGPMP comparison table"] src=["vgpmp_comparison_table.svg"] dark_invert=[true]) %}
+{% <figure alt={["vGPMP comparison table"]} src={["vgpmp_comparison_table.svg"]} dark_invert={[true]}> %}
 **Table.** Comparison between vGPMP and GPMP2 on the UR10 and Franka robots, in the Industrial (I) and Bookshelves (B) environments. The measures (M) shown are accuracy (Acc), mean path length (MPL), and mean clearance (MC).
-{% end %}
+{% </figure> %}
 
 Next, we demonstrate that our framework can enable one to incorporate a grasping pose without further tuning or changing the underlying model assumptions. 
 This amounts to adding appropriate terms to the soft constraints, and enables the Franka robot, in simulation, to pick up a can.
 Further adjustments to can be made to allow the robot to pick up the can and move it to desired places by conditioning end-effector joints to open and close at specific time steps.
 
-{% figure(alt=["vGPMP grasping frame 1","vGPMP grasping frame 2","vGPMP grasping frame 3","vGPMP grasping frame 4"] src=["vgpmp_plot_grasp_short_1.jpg","vgpmp_plot_grasp_short_2.jpg","vgpmp_plot_grasp_short_3.jpg","vgpmp_plot_grasp_short_4.jpg"]) %}
+{% <figure alt={["vGPMP grasping frame 1","vGPMP grasping frame 2","vGPMP grasping frame 3","vGPMP grasping frame 4"]} src={["vgpmp_plot_grasp_short_1.jpg","vgpmp_plot_grasp_short_2.jpg","vgpmp_plot_grasp_short_3.jpg","vgpmp_plot_grasp_short_4.jpg"]}> %}
 **Figure.** A randomly-sampled trajectory for grasping a can. Examining the frames in order, we can see end-effector alignment with the final pose, the approach stage, and the the grasping stage.
-{% end %}
+{% </figure> %}
 
 Finally we implement our approach on a real robot, via a demonstration of the Franka robot avoiding boxes.
 Here, our framework allows sampled paths to be computed at any required resolution without additional interpolation, enabling fine-grained control over smoothness.
 We also show a set of motion plans computed by the GPMP2 baseline,[^gpmp2] for comparison.
 
-{% figure(src=["vGPMP_submission_video.mp4"]) %}
+{% <figure src={["vGPMP_submission_video.mp4"]}> %}
 **Figure.** Execution of a vGPMP trajectory on a real robot. We also show a comparison with the GPMP2 baseline. The original, full-resolution video included with the submission can be found in the paper's [codebase](https://github.com/luke-ck/vgpmp/blob/main/data/vGPMP_submission_video.mp4).
-{% end %}
+{% </figure> %}
 
 
 

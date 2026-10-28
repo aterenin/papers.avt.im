@@ -33,9 +33,9 @@ In contrast, *large-domain asymptotics* involve time-series data on a regular gr
 The key difference between these is that the former approximately fixed the volume of space which data takes up, and increases data-density as data size increases, whereas the latter fixes data-density and increases the volume of space the data takes up as data size increases.
 Let's see a simple comparison between standard large-scale Gaussian process approximations in both regimes.
 
-{% figure(alt=["Large-scale Gaussian process comparison"] src=["toy_comparison.svg"] dark_invert=[true]) %}
+{% <figure alt={["Large-scale Gaussian process comparison"]} src={["toy_comparison.svg"]} dark_invert={[true]}> %}
 **Figure 1.** A comparison of standard large-scale Gaussian process techniques, including conjugate gradient and sparse Gaussian processes with variational inference, under both asymptotics.
-{% end %}
+{% </figure> %}
 
 From this comparison, one can see that different large-scale Gaussian process approximations work well in different regimes.
 Conjugate-gradient-based Gaussian processes[^cg] work well under large-domain asymptotics, whereas sparse Gaussian processes trained via variational inference[^ip-s] [^ip-v] work well under infill asymptotics.
@@ -82,9 +82,9 @@ With the optimization objective and stochastic estimators defined, all that rema
 In the paper, use stochastic gradient descent with Nesterov momentum, gradient clipping, arithmetic Polyak averaging, and a constant learning rate.
 Let's see how this algorithm performs, in particular how it is affected by observation noise in the likelihood.
 
-{% figure(alt=["Convergence of stochastic gradient descent for the Gaussian process mean"] src=["exact_metrics.svg"] dark_invert=[true]) %}
+{% <figure alt={["Convergence of stochastic gradient descent for the Gaussian process mean"]} src={["exact_metrics.svg"]} dark_invert={[true]}> %}
 **Figure 2.** Convergence of stochastic gradient descent for the Gaussian process posterior mean, in terms of training and test error, along with Euclidean error for the representer weights.
-{% end %}
+{% </figure> %}
 
 From this plot, it is clear that stochastic gradient descent does not converge approximately to the correct representer weights.
 This lack of convergence is not an artifact of measuring approximation error in representer weight space: it also does not occur under the respective reproducing kernel Hilbert space norm between functions.
@@ -100,9 +100,9 @@ In the paper, we define the set of *spectral basis functions* `$u^{(i)}(\cdot)$`
 These are the same functions that arise in kernel principal component analysis.
 Let's consider how SGD behaves in terms of the subspace defined by each spectral basis function one-at-a-time.
 
-{% figure(alt=["Convergence in terms of spectral basis functions"] src=["eigenfunctions_and_error.svg"] dark_invert=[true]) %}
+{% <figure alt={["Convergence in terms of spectral basis functions"]} src={["eigenfunctions_and_error.svg"]} dark_invert={[true]}> %}
 **Figure 3.** A comparison of standard large-scale Gaussian process techniques, including conjugate gradients and sparse Gaussian processes with variational inference, under both asymptotics.
-{% end %}
+{% </figure> %}
 
 From this, we see what is going on: posterior approximation error, measured in terms of the marginal Wasserstein distance at each point, is highest in the regions corresponding to spectral basis functions corresponding to small eigenvalues.
 We can use this to understand non-convergence of SGD, by considering three regions of state space:
@@ -129,13 +129,13 @@ In the standard regime, conjugate gradients tends to performs the best until a c
 In the low-noise regime, in contrast, SGD reliably outperforms conjugate gradients and sparse Gaussian processes.
 This shows that SGD, in spite of being quite dissimilar from standard approaches, can be a competitive algorithm.
 
-{% figure(alt=["Performance comparison: table"] src=["comparison_table.svg"] dark_invert=[true]) %}
+{% <figure alt={["Performance comparison: table"]} src={["comparison_table.svg"]} dark_invert={[true]}> %}
 **Table 1.** Regression benchmarks, with `$N$` ranging up to approximately 2 million. The superscript `$(\cdot)^\dagger$` denotes the setting where the likelihood noise is set to a low value of `$\sigma^2 = 10^{-6}$`.
-{% end %}
+{% </figure> %}
 
-{% figure(alt=["Performance comparison: training curves"] src=["rmse_llh_trace.svg"] dark_invert=[true]) %}
+{% <figure alt={["Performance comparison: training curves"]} src={["rmse_llh_trace.svg"]} dark_invert={[true]}> %}
 **Figure 4.** Training curves for the regression benchmarks, for a subset of the considered datasets.
-{% end %}
+{% </figure> %}
 
 ## Bayesian optimization
 
@@ -145,9 +145,9 @@ Results are given below, for two different compute budgets.
 From these, we see that SGD either matches or outperforms both baselines, depending on how much compute budget these methods are given.
 This suggests the benign non-convergence, which we previously saw in one dimension and examined theoretically, carries over to decision-making settings.
 
-{% figure(alt=["Thompson sampling comparison"] src=["thompson.svg"] dark_invert=[true]) %}
+{% <figure alt={["Thompson sampling comparison"]} src={["thompson.svg"]} dark_invert={[true]}> %}
 **Figure 5.** Parallel thompson sampling benchmark, for two different computational budgets.
-{% end %}
+{% </figure> %}
 
 # Conclusion
 

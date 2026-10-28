@@ -32,9 +32,9 @@ In this work, we explore neural network architectures designed for accurately mo
 One of these equations' defining features is that when two objects collide, their velocities change direction *instantaneously* in a non-smooth manner---this describes, for instance, how a bouncing ball immediately changes direction upon hitting the ground, resulting from a transfer of momentum and other physical considerations.
 
 
-{% figure(src = ["bb_resnet_phase.mp4"], dark_invert = [true]) %}
+{% <figure src={["bb_resnet_phase.mp4"]} dark_invert={[true]}> %}
 **Illustration:** here, we see a residual network, trained to predict the trajectory of a bouncing ball, struggle to resolve contact events. Since contacts trigger a discontinuous jump in velocity space, they are difficult to model in a black-box fashion, causing the residual network to incorrectly approximate them through spurious smooth dynamics. We explore the use of physical inductive biases to alleviate these issues.
-{% end %}
+{% </figure> %}
 
 
 Because of the resulting non-smoothness and non-linearity, contacts dynamics are considered notoriously difficult to compute. 
@@ -42,9 +42,9 @@ For example, a numerical regime must decide whether to enforce non-interpenetrat
 Below, we illustrate sample numerical trajectory of a bouncing ball.
 
 
-{% figure(alt = ["Contact time","Contact state"], src = ["contact-time.svg","contact-state.svg"], dark_invert = [true,true]) %}
+{% <figure alt={["Contact time","Contact state"]} src={["contact-time.svg","contact-state.svg"]} dark_invert={[true,true]}> %}
 **Example:** integration scheme for a bouncing ball that enforces constraints exactly. Initially, the ball is time-stepped until a contact with the floor is detected through interpenetration at time `$t_1$`. Then, the trajectory is (a) linearly interpolated to find the *contact time* `$t_c$` where contact occurs between the ball and floor. Finally, the contact state at time `$t_c$` is calculated, a transfer of momentum between `$t_c^-$` and `$t_c^+$` is performed, and the ball is time-stepped as usual to time `$t_1$`.
-{% end %}
+{% </figure> %}
 
 
 These difficulties are further compounded when the equations of motion of the system under study are unknown, which occurs in robotics when learning to interact with unknown objects.
@@ -74,12 +74,12 @@ During contact events, these equations are augmented by a contact term, denoted 
 Below, we illustrate how the different states in the CDL-Network are calculated.
 
 
-{% figure(alt = ["Contact network"], src = ["contact-network.svg"], dark_invert=[true]) %}
+{% <figure alt={["Contact network"]} src={["contact-network.svg"]} dark_invert={[true]}> %}
 **Illustration:** a CD-Lagrange network. 
 Here, we begin from initial states `$(\mathbf{Q}_0,\mathbf{\dot Q}_{\frac{1}{2}})$`. 
 We calculate the next position `$\mathbf{Q}_1$`, and proceed to calculate the next velocity `$\mathbf{\dot Q}_{1 + \frac{1}{2}} = \mathbf{\dot Q}_{1 + \frac{1}{2}}^S + \mathbf{\dot Q}_{1 + \frac{1}{2}}^C$` as a sum of smooth and contact terms.
 These terms are in turn calculated using the conservative forces `$\mathbf{F}$` and the impulse `$\mathbf{I}$`, which are calculated from the parameterized Lagrangian, whose potential energy is given by a fully connected network.
-{% end %}
+{% </figure> %}
 
 
 # Touch Feedback
@@ -92,14 +92,14 @@ We illustrate this behavior on the following examples.
 
 * **Bouncing ball**. Here, we see that without touch feedback, the CD--Lagrange network struggles to learn the contact events properly and instead approximates the discontinuous behavior using the potential network.
 With training data that includes touch feedback, we see that performance, shown below, is significantly better.
-{% figure(src = ["bb_cdln_phase.mp4"], dark_invert=[true]) %}
+{% <figure src={["bb_cdln_phase.mp4"]} dark_invert={[true]}> %}
 **(a)** Bouncing ball: CD--Lagrange
-{% end %}
+{% </figure> %}
 
 
 * **Newton's cradle**. As an additional baseline, we employ a vanilla residual network (ResNet) as well as a residual network with additional contact inputs (ResNet contact).
 The CD-Lagrange network, shown below, exhibits the best approximation behavior and learn both the potential and contact events more accurately than the residual networks.
-{{ figure(src = ["nc_cdln.mp4","nc_resnet.mp4"], subcaption = ["**(a)** Newton's cradle: CD--Lagrange","**(b)** Newton's cradle: ResNet"], dark_invert=[true,true]) }}
+{{ <figure src={["nc_cdln.mp4","nc_resnet.mp4"]} subcaption={["**(a)** Newton's cradle: CD--Lagrange","**(b)** Newton's cradle: ResNet"]} dark_invert={[true,true]} /> }}
 
 
 # Summary

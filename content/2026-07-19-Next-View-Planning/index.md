@@ -17,7 +17,9 @@ large_card = false
 favicon = false
 +++
 
-{{ figure(src=["teaser.svg"], dark_invert=[true], alt=["Task-specific applications enabled by our framework."], body="**Figure 1**: *Task-specific* applications enabled by our framework for optimizing the next view angle given an incomplete observation of a given object.") }}
+{% <figure src={["teaser.svg"]} dark_invert={[true]} alt={["Task-specific applications enabled by our framework."]}> %}
+**Figure 1**: *Task-specific* applications enabled by our framework for optimizing the next view angle given an incomplete observation of a given object.
+{% </figure> %}
 
 **Abstract.** We develop a framework for task-specific active next-best-view selection in 3D reconstruction from point clouds, by casting the problem in the language of Bayesian decision theory. Our framework works by (a) placing a prior distribution over the space of implicit surfaces, (b) using recently-developed stochastic surface reconstruction methods to calculate the resulting posterior distribution, then (c) using the posterior distribution to carefully reason about which view to scan next. This enables us to perform camera selection in a manner that is directly optimized for the intended use of the reconstructed data -- meaning, we reduce uncertainty only in those regions that make a difference in the task at hand, as opposed to prior approaches that reduce it uniformly across space. We evaluate our method across three distinct downstream tasks: semantic classification, segmentation, and PDE-guided physics simulation. Experimental results demonstrate that our framework achieves superior task performance with fewer views compared to commonly used baselines and prior general uncertainty-reduction techniques.
 
@@ -73,16 +75,22 @@ We evaluate the proposed method in several settings, shown in brief below.
 
 ## Classification
 
-{{ figure(src=["classification.svg"], dark_invert=[true], alt=["Classification results."], body="**Figure 2:** We show a comparison between our method and baseline methods for a classification task. Our approach achieves a more precise classification result with fewer views.") }}
+{% <figure src={["classification.svg"]} dark_invert={[true]} alt={["Classification results."]}> %}
+**Figure 2:** We show a comparison between our method and baseline methods for a classification task. Our approach achieves a more precise classification result with fewer views.
+{% </figure> %}
 
 ## Segmentation
 
-{{ figure(src=["segmentation.mp4"], alt=["Segmentation results."], source_attributes=["autoplay muted loop playsinline controls"], body="**Figure 3:** We show a comparison between our method and furthest point sampling (FPS), for an object segmentation task, where the goal is to discover more parts of an object. Our approach discovers more parts with fewer views.") }}
+{% <figure src={["segmentation.mp4"]} alt={["Segmentation results."]} source_attributes={["autoplay muted loop playsinline controls"]}> %}
+**Figure 3:** We show a comparison between our method and furthest point sampling (FPS), for an object segmentation task, where the goal is to discover more parts of an object. Our approach discovers more parts with fewer views.
+{% </figure> %}
 
 
 ## Heat Diffusion
 
-{{ figure(src=["heat.mp4"], alt=["Heat diffusion results."], source_attributes=["autoplay muted loop playsinline controls"], body="**Figure 4:** We show a comparison between our method and furthest point sampling (FPS) for a heat diffusion task. With the same number (4) of cameras, our approach achieves a better heat simulation fidelity than the baseline.") }}
+{% <figure src={["heat.mp4"]} alt={["Heat diffusion results."]} source_attributes={["autoplay muted loop playsinline controls"]}> %}
+**Figure 4:** We show a comparison between our method and furthest point sampling (FPS) for a heat diffusion task. With the same number (4) of cameras, our approach achieves a better heat simulation fidelity than the baseline.
+{% </figure> %}
 
 
 # Citation

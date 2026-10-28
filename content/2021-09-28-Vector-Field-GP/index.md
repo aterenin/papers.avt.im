@@ -39,9 +39,9 @@ This result is also known as the *hairy ball* theorem, because if we imagine a b
 Note that, unlike in the Euclidean setting, this implies that a smooth vector field generally *cannot* be written as a continuous function `$f : X \to \mathbb{R}^d$`, and we must work with the machinery of tangent bundles to make sense of vector fields.
 
 
-{% figure(alt=["Torus","Klein bottle"], src=["torus.png","klein_bottle.png"]) %}
+{% <figure alt={["Torus","Klein bottle"]} src={["torus.png","klein_bottle.png"]}> %}
 Examples of Gaussian random vector fields on the torus (left) and the Klein bottle (right).
-{% end %}
+{% </figure> %}
 
 
 # Gaussian vector fields
@@ -99,9 +99,9 @@ We illustrate this general procedure below.
 Here, three scalar processes are combined to create a non-tangential vector-valued process in the embedded space, and projected to obtain a tangential vector field on the manifold.
 
 
-{% figure(alt = ["Scalar processes","Embedded process","Projected process"], src = ["s2_xyz.png","s2_ev.png","s2_pr.png"], subcaption = ["(a) Scalar processes","(a) Embedded process","(a) Projected process"]) %}
+{% <figure alt={["Scalar processes","Embedded process","Projected process"]} src={["s2_xyz.png","s2_ev.png","s2_pr.png"]} subcaption={["(a) Scalar processes","(a) Embedded process","(a) Projected process"]}> %}
 Illustration of Gaussian processes constructed using projected kernels.
-{% end %}
+{% </figure> %}
 
 
 # Example: probabilistic global wind interpolation
@@ -111,14 +111,14 @@ We focus on the benefit of using a geometrically consistent model over a naïve 
 Results are shown below.
 
 
-{% figure(alt = ["Euclidean process on sphere","Euclidean process: plane"], src = ["r2_sphere.png","r2_flat.png"]) %}
+{% <figure alt={["Euclidean process on sphere","Euclidean process: plane"]} src={["r2_sphere.png","r2_flat.png"]}> %}
 Wind interpolation using a Euclidean process.
-{% end %}
+{% </figure> %}
 
 
-{% figure(alt = ["Manifold process: sphere","Manifold process: plane"], src = ["s2_sphere.png","s2_flat.png"]) %}
+{% <figure alt={["Manifold process: sphere","Manifold process: plane"]} src={["s2_sphere.png","s2_flat.png"]}> %}
 Wind interpolation using a Riemannian process.
-{% end %}
+{% </figure> %}
 
 
 We see that the uncertainties in the Euclidean vector-valued GP become unnaturally distorted as the satellite approaches the poles, while the Riemannian case has a uniform band along the observations. 

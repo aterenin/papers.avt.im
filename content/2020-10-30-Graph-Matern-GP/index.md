@@ -55,7 +55,7 @@ The goal of this work is to explore generalizations of this expression to the ca
 Below, we visualize these processes, for a sequence of weighted graphs approaching a sphere in the limit.
 
 
-{{ figure(alt = ["Graph Matérn Gaussian processes: sphere"], src = ["convergence.svg"])}}
+{{ <figure alt={["Graph Matérn Gaussian processes: sphere"]} src={["convergence.svg"]} /> }}
 
 
 # Graph Matérn Gaussian processes
@@ -105,10 +105,10 @@ Nodes for which data is available are indicated with white circles.
 Global and local means and standard deviations for this dataset can be seen below.
 
 
-{{ figure(alt = ["Traffic data: global mean","Traffic data: global standard deviation"], src = ["global_mean.svg","global_std.svg"], dark_invert = [true,true], subcaption = ["(a) Mean: global","(b) Standard deviation: global"]) }}
+{{ <figure alt={["Traffic data: global mean","Traffic data: global standard deviation"]} src={["global_mean.svg","global_std.svg"]} dark_invert={[true,true]} subcaption={["(a) Mean: global","(b) Standard deviation: global"]} /> }}
 
 
-{{ figure(alt = ["Traffic data: local mean","Traffic data: local standard deviation"], src = ["junction_mean.svg","junction_std.svg"], dark_invert = [true,true], subcaption = ["(a) Mean: local","(b) Standard deviation: local"]) }}
+{{ <figure alt={["Traffic data: local mean","Traffic data: local standard deviation"]} src={["junction_mean.svg","junction_std.svg"]} dark_invert={[true,true]} subcaption={["(a) Mean: local","(b) Standard deviation: local"]} /> }}
 
 
 From the above, we see that the predictions made by the graph Matérn Gaussian process reflects the structure of the graph. 

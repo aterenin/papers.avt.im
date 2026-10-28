@@ -19,7 +19,9 @@ favicon = false
 +++
 
 
-{{ figure(src=["scorp.svg"], dark_invert=[true], alt=["Statistical queries such as in probability computed by our method."], body="Figure 1: An illustration of stochastic Poisson surface reconstruction.") }}
+{% <figure src={["scorp.svg"]} dark_invert={[true]} alt={["Statistical queries such as in probability computed by our method."]}> %}
+Figure 1: An illustration of stochastic Poisson surface reconstruction.
+{% </figure> %}
 
 Surface reconstruction algorithms are used to convert point cloud data—the most common format in which real-world scans are captured—into other downstream-usable formats, such as meshes or other shape representations. 
 For an orientable surface `$\Omega \subseteq \mathbb{R}^3$`, they work by taking a set of oriented points `$(x_i, v_i)_{i=1}^N$` from the surface, where `$v_i$` are normal vectors, and attempt to produce a suitable shape representation of `$\Omega$`.
@@ -89,13 +91,21 @@ We also include sampling formulas in the paper, and describe strategies for sele
 We now illustrate some example surface reconstruction applications common in computer graphics, which can be handled using our approach.
 This is shown in Figure 2, 3, 4, and 5 below.
 
-{{ figure(src=["collision.svg"], dark_invert=[true], alt=["Collision probabilities of various cats and a dragon."], body="Figure 2: Collision detection.") }}
+{% <figure src={["collision.svg"]} dark_invert={[true]} alt={["Collision probabilities of various cats and a dragon."]}> %}
+Figure 2: Collision detection.
+{% </figure> %}
 
-{{ figure(src=["falcon.svg"], dark_invert=[true], alt=["Posterior samples along a ray looking at a falcon."], body="Figure 3: Ray casting.") }}
+{% <figure src={["falcon.svg"]} dark_invert={[true]} alt={["Posterior samples along a ray looking at a falcon."]}> %}
+Figure 3: Ray casting.
+{% </figure> %}
 
-{{ figure(src=["sampling.svg"], dark_invert=[true], alt=["Samples of the posterior given a partial scan of a bunny."], body="Figure 4: Monte Carlo samples from the reconstructed surface' posterior.") }}
+{% <figure src={["sampling.svg"]} dark_invert={[true]} alt={["Samples of the posterior given a partial scan of a bunny."]}> %}
+Figure 4: Monte Carlo samples from the reconstructed surface' posterior.
+{% </figure> %}
 
-{{ figure(src=["dragon_lengthscale.svg"], dark_invert=[true], alt=["Runtime of our method and prior method for a variety of length scales."], body="Figure 5: Runtime as a function of length scale for our approach, and the original two-stage stochastic Poisson surface reconstruction pipeline, where we see that our runtime does not depend significantly on the kernel's length scale, compared to prior work.") }}
+{% <figure src={["dragon_lengthscale.svg"]} dark_invert={[true]} alt={["Runtime of our method and prior method for a variety of length scales."]}> %}
+Figure 5: Runtime as a function of length scale for our approach, and the original two-stage stochastic Poisson surface reconstruction pipeline, where we see that our runtime does not depend significantly on the kernel's length scale, compared to prior work.
+{% </figure> %}
 
 
 # Conclusion
