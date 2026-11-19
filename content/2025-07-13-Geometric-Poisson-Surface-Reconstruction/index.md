@@ -13,7 +13,6 @@ buttons = [
     {name = "PDF", url = "https://arxiv.org/pdf/2503.19136"},
     {name = "Code", url = "https://github.com/sholalkere/GeoSPSR"},
 ]
-katex = true
 large_card = false
 favicon = false
 +++

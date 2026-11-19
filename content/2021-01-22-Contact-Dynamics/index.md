@@ -15,7 +15,6 @@ buttons = [
     {name = "Poster", url = "/presentations/2021-03-21-Contact-Dynamics-Poster/2021-03-21-Contact-Dynamics-Poster.pdf"},
 ]
 video = "https://virtual.aistats.org/virtual/2021/poster/1764"
-katex = true
 large_card = true
 +++
 

@@ -15,7 +15,6 @@ buttons = [
     {name = "Code", url = "https://github.com/spbu-math-cs/Riemannian-Gaussian-Processes"},
     {name = "Poster", url = "presentations/2020-12-07-Riemannian-Matern-GP-Poster/2020-12-07-Riemannian-Matern-GP-Poster.pdf"},
 ]
-katex = true
 large_card = true
 +++
 

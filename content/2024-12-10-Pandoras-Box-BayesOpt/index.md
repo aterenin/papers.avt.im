@@ -14,7 +14,6 @@ buttons = [
     {name = "PDF", url = "https://arxiv.org/pdf/2406.20062"},
     {name = "Code", url = "https://github.com/QianJaneXie/PandoraBayesOpt"},
 ]
-katex = true
 large_card = true
 +++
 

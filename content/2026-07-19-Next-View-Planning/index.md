@@ -12,7 +12,6 @@ buttons = [
     {name = "PDF", url = "https://arxiv.org/pdf/2605.05095"},
     {name = "Code", url = "https://github.com/jingsenzhu/BayesianNBV/"}
 ]
-katex = true
 large_card = false
 favicon = false
 +++

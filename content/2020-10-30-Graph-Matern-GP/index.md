@@ -17,7 +17,6 @@ buttons = [
     {name = "Poster", url = "/presentations/2021-03-21-Graph-Matern-GP-Poster/2021-03-21-Graph-Matern-GP-Poster.pdf"},
     {name = "Video", url = "https://virtual.aistats.org/virtual/2021/oral/1817"},
 ]
-katex = true
 large_card = true
 +++
 

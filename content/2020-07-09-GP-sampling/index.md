@@ -16,7 +16,6 @@ buttons = [
     {name = "Code", url = "https://github.com/j-wilson/GPflowSampling"},
     {name = "Video", url = "https://icml.cc/virtual/2020/poster/6461"},
 ]
-katex = true
 large_card = true
 +++
 

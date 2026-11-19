@@ -16,7 +16,6 @@ buttons = [
     {name = "Poster", url = "/presentations/2021-03-21-Aligning-Time-Series-Poster/2021-03-21-Aligning-Time-Series-Poster.pdf"},
     {name = "Video", url = "https://virtual.aistats.org/virtual/2021/poster/1628"},
 ]
-katex = true
 large_card = true
 +++
 

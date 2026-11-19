@@ -16,7 +16,6 @@ buttons = [
     {name = "Code", url = "https://github.com/MJHutchinson/ExtrinsicGaugeIndependentVectorGPs"},
     {name = "Video", url = "https://neurips.cc/virtual/2021/poster/27056"},
 ]
-katex = true
 large_card = true
 +++
 

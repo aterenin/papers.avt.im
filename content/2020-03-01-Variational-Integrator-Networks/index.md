@@ -14,7 +14,6 @@ buttons = [
     {name="Code", url = "https://github.com/steindoringi/Variational_Integrator_Networks"},
     {name="Video", url = "https://aistats2020.net/poster_1009.html"},
 ]
-katex = true
 large_card = true
 +++
 

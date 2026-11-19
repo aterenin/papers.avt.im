@@ -1,4 +1,5 @@
-$color-selection: #fec6c4;
-$color-selection-dark: invert($color-selection);
-
-@import "../themes/academic-paper/sass/main.scss";
+@use "sass:color";
+@use "../themes/academic-paper/sass/main" with (
+    $color-selection: #fec6c4,
+    $color-selection-dark: color.invert(#fec6c4),
+);

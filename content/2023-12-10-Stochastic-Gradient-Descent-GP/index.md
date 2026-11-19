@@ -15,7 +15,6 @@ buttons = [
     {name = "PDF", url = "https://arxiv.org/pdf/2306.11589"},
     {name = "Code", url = "https://github.com/cambridge-mlg/sgd-gp"},
 ]
-katex = true
 large_card = true
 +++
 

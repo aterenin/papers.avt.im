@@ -17,7 +17,6 @@ buttons = [
     {name = "PDF", url = "https://arxiv.org/pdf/2309.00854"},
     {name = "Code", url = "http://github.com/luke-ck/vgpmp"},
 ]
-katex = true
 large_card = true
 +++
 
